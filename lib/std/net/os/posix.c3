@@ -37,6 +37,7 @@ fn fault convert_error(Errno error)
 	{
 		case EACCES: return io::NO_PERMISSION;
 		case EADDRINUSE: return net::ADDRESS_IN_USE;
+		case EADDRNOTAVAIL: return net::ADDRESS_NOT_AVAILABLE;
 		case EALREADY: return net::CONNECTION_ALREADY_IN_PROGRESS;
 		case EBADF: return net::BAD_SOCKET_DESCRIPTOR;
 		case ECONNREFUSED: return net::CONNECTION_REFUSED;
