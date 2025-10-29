@@ -102,6 +102,7 @@ fn fault convert_error(WSAError error)
 		case wsa::EACCESS: return io::NO_PERMISSION;
 		case wsa::EINPROGRESS: return net::STILL_PROCESSING_CALLBACK;
 		case wsa::EADDRINUSE: return net::ADDRESS_IN_USE;
+		case wsa::EADDRNOTAVAIL: return net::ADDRESS_NOT_AVAILABLE;
 		case wsa::EALREADY: return net::CONNECTION_ALREADY_IN_PROGRESS;
 		case wsa::EBADF: return net::BAD_SOCKET_DESCRIPTOR;
 		case wsa::EINTR: return io::INTERRUPTED;
