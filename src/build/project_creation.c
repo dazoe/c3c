@@ -314,7 +314,7 @@ void create_project(BuildOptions *build_options)
 	{
 		error_exit("Can't open path '%s'.", build_options->path);
 	}
-	
+
 	if (file_exists(build_options->project_name))
 	{
 		if (file_is_dir(build_options->project_name))
@@ -337,16 +337,16 @@ CREATE:
 	create_file_or_fail(build_options, "README.md", NULL);
 	create_file_or_fail(build_options, "project.json", template, build_options->project_name);
 	mkdir_or_fail(build_options, "build");
-	mkdir_or_fail(build_options, "docs");
+	// mkdir_or_fail(build_options, "docs");
 	mkdir_or_fail(build_options, "lib");
 	mkdir_or_fail(build_options, "resources");
-	mkdir_or_fail(build_options, "scripts");
+	// mkdir_or_fail(build_options, "scripts");
 	mkdir_or_fail(build_options, "src");
 	chdir_or_fail(build_options, "src");
 
 	create_file_or_fail(build_options, "main.c3", main_template, module_name(build_options));
 	chdir_or_fail(build_options, "..");
-	mkdir_or_fail(build_options, "test");
+	// mkdir_or_fail(build_options, "test");
 
 	(void) printf("Project '%s' created.\n", build_options->project_name);
 	exit_compiler(COMPILER_SUCCESS_EXIT);
@@ -483,6 +483,6 @@ static void mkdir_or_fail(BuildOptions *build_options, const char *name)
 	{
 		delete_dir_and_exit(build_options, "Failed to create directory '%s'.", name);
 	}
-	const char *path = file_append_path_temp(name, ".gitkeep");
-	file_touch(path);
+	// const char *path = file_append_path_temp(name, ".gitkeep");
+	// file_touch(path);
 }
